@@ -1,275 +1,200 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Taufiq Vps Store</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #1e40af;
-      color: white;
-      text-align: center;
-      padding: 30px 0;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.2em;
-    }
-    header p {
-      margin-top: 8px;
-      font-size: 1.1em;
-    }
-    .container {
-      max-width: 1000px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-    h2 {
-      color: #1e40af;
-      margin-bottom: 15px;
-    }
-    .vps-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .vps-card {
-      background: white;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .vps-card h3 {
-      margin: 0 0 10px;
-      color: #1e40af;
-    }
-    .vps-card p {
-      margin: 6px 0;
-    }
-    .order-btn {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 10px 22px;
-      background: #10b981;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-    .order-btn:hover {
-      background: #059669;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TAUFIQSHOPVPS</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+header {
+  background-color: #111;
+  text-align: center;
+  padding: 20px;
+  font-size: 2em;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.info-box {
+  text-align: center;
+  padding: 50px 20px;
+}
+.container {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+.paket {
+  width: 250px;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #1f1f1f;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s;
+  opacity: 0;
+  position: relative;
+}
+.paket.show { opacity: 1; }
+.paket:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 15px rgba(255,255,255,0.3);
+}
+.harga { font-size: 1.5em; font-weight: bold; }
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.starter { background: linear-gradient(45deg,#16a34a,#22c55e); box-shadow:0 0 10px #16a34a; }
+.standar { background: linear-gradient(45deg,#2563eb,#3b82f6); box-shadow:0 0 10px #2563eb; }
+.tebs { background: linear-gradient(45deg,#f59e0b,#fbbf24); box-shadow:0 0 10px #f59e0b; }
+.jumbo { background: linear-gradient(45deg,#dc2626,#ef4444); box-shadow:0 0 10px #dc2626; }
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: gold;
+  color: #000;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+#cookieNotice {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #222;
+  text-align: center;
+  padding: 10px;
+  z-index: 15;
+}
+.cookie-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.setuju { background:#16a34a; color:#fff; }
+.tidak { background:#dc2626; color:#fff; }
+#notifikasi {
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  background:#1e40af;
+  padding:10px 15px;
+  border-radius:12px;
+  font-weight:bold;
+  box-shadow:0 0 10px #1e40af;
+  display:none;
+  cursor:pointer;
+}
+</style>
 </head>
 <body>
 
-<header>
-  <h1>Taufiq Vps Store</h1>
-  <p>Taufiq Vps - melayani VPS ptrocdactyl</p>
-</header>
+<header>TAUFIQSHOPVPS</header>
 
-<div class="container">
-
-  <h2>VPS Genoa</h2>
-  <div class="vps-list">
-
-    <div class="vps-card">
-      <h3>Genoa 1 GB</h3>
-      <p>2 Core | 1GB RAM | SSD</p>
-      <p><b>Rp 150.000</b></p>
-      <a class="order-btn" href="https://wa.me/62895327513269" target="_blank">Order WhatsApp</a>
-    </div>
-
-    <div class="vps-card">
-      <h3>Genoa 2 GB</h3>
-      <p>2 Core | 2GB RAM | SSD</p>
-      <p><b>Rp 300.000</b></p>
-      <a class="order-btn" href="https://wa.me/62895327513269" target="_blank">Order WhatsApp</a>
-    </div>
-
-    <div class="vps-card">
-      <h3>Genoa 4 GB</h3>
-      <p>2 Core | 4GB RAM | SSD</p>
-      <p><b>Rp 410.000</b></p>
-      <a class="order-btn" href="https://wa.me/62895327513269" target="_blank">Order WhatsApp</a>
-    </div>
-
-    <div class="vps-card">
-      <h3>Genoa 8 GB</h3>
-      <p>4 Core | 8GB RAM | SSD</p>
-      <p><b>Rp 700.000</b></p>
-      <a class="order-btn" href="https://wa.me/62895327513269" target="_blank">Order WhatsApp</a>
-    </div>
-
-    <div class="vps-card">
-      <h3>Genoa 16 GB</h3>
-      <p>4 Core | 16GB RAM | SSD</p>
-      <p><b>Rp 1.000.000</b></p>
-      <a class="order-btn" href="https://wa.me/62895327513269" target="_blank">Order WhatsApp</a>
-    </div>
-
-  </div>
-
-  <h2 style="margin-top:50px;">VPS Milan</h2>
-  <div class="vps-list">
-
-    <div class="vps-card">
-      <h3>Milan 4 GB</h3>
-      <p>2 Core | 4GB RAM | SSD</p>
-      <p><b>Rp 410.000</b></p>
-      <a class="order-btn" href="https://wa.me/62895327513269" target="_blank">Order WhatsApp</a>
-    </div>
-
-    <div class="vps-card">
-      <h3>Milan 8 GB</h3>
-      <p>4 Core | 8GB RAM | SSD</p>
-      <p><b>Rp 700.000</b></p>
-      <a class="order-btn" href="https://wa.me/62895327513269" target="_blank">Order WhatsApp</a>
-    </div>
-
-    <div class="vps-card">
-      <h3>Milan 16 GB</h3>
-      <p>4 Core | 16GB RAM | SSD</p>
-      <p><b>Rp 1.000.000</b></p>
-      <a class="order-btn" href="https://wa.me/62895327513269" target="_blank">Order WhatsApp</a>
-    </div>
-
-  </div>
-
+<div class="info-box" id="infoBox">
+  <h2>Selamat datang di TAUFIQSHOPVPS</h2>
+  <p>💻 Jual panel bot murah, amanah, dan cepat.</p>
+  <p>Setujui cookies untuk lanjut melihat paket.</p>
 </div>
 
-</body>
-</html>    .vps-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .vps-card {
-      background: white;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .vps-card h3 {
-      margin: 0 0 10px;
-      color: #1e40af;
-    }
-    .vps-card p {
-      margin: 6px 0;
-    }
-    .order-btn {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 10px 22px;
-      background: #10b981;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
-    .order-btn:hover {
-      background: #059669;
-    }
-  </style>
-</head>
-<body>
-
-<header>
-  <h1>Taufiq Vps Store</h1>
-  <p>Taufiq Vps - melayani VPS ptrocdactyl</p>
-</header>
-
-<div class="container">
-
-  <!-- section kelebihan VPS -->
-  PROFIT</h2>
-  <ul>
-    <li>💨 Free Install VPS</li>
-    <li>⚡ Free Install PMA</li>
-    <li>🎨 Free Install Tema RAM 8–16GB+</li>
-    <li>🌐 Free Domain</li>
-    <li>KELEBIHAN VPS</li>
-    <li>uptime 99%</li>
-    <li>website stabil</li>
-    <li>Anti Ddos</li>
-    <li>Anti Panel Down</li>
-  </ul>
-
-  <h2>VPS Genoa</h2>
-  <div class="vps-list">
-
-    <div class="vps-card">
-      <h3>Genoa 1 GB</h3>
-      <p>2 Core | 1GB RAM | SSD</p>
-      <p><b>Rp 150.000</b></p>
-      <a class="order-btn" href="https://wa.me/62895327513269" target="_blank">Order WhatsApp</a>
-    </div>
-
-    <div class="vps-card">
-      <h3>Genoa 2 GB</h3>
-      <p>2 Core | 2GB RAM | SSD</p>
-      <p><b>Rp 300.000</b></p>
-      <a class="order-btn" href="https://wa.me/62895327513269" target="_blank">Order WhatsApp</a>
-    </div>
-
-    <div class="vps-card">
-      <h3>Genoa 4 GB</h3>
-      <p>2 Core | 4GB RAM | SSD</p>
-      <p><b>Rp 410.000</b></p>
-      <a class="order-btn" href="https://wa.me/62895327513269" target="_blank">Order WhatsApp</a>
-    </div>
-
-    <div class="vps-card">
-      <h3>Genoa 8 GB</h3>
-      <p>4 Core | 8GB RAM | SSD</p>
-      <p><b>Rp 700.000</b></p>
-      <a class="order-btn" href="https://wa.me/62895327513269" target="_blank">Order WhatsApp</a>
-    </div>
-
-    <div class="vps-card">
-      <h3>Genoa 16 GB</h3>
-      <p>4 Core | 16GB RAM | SSD</p>
-      <p><b>Rp 1.000.000</b></p>
-      <a class="order-btn" href="https://wa.me/62895327513269" target="_blank">Order WhatsApp</a>
-    </div>
-
+<div class="container" id="paketContainer">
+  <!-- Paket Starter -->
+  <div class="paket">
+    <span class="badge">💚 Murah</span>
+    <h3>💻 Paket Starter</h3>
+    <p>RAM 1GB</p>
+    <p class="harga">2rb</p>
+    <a class="btn starter" href="#" onclick="order('Paket Starter | RAM 1GB')">Order</a>
   </div>
-
-  <h2 style="margin-top:50px;">VPS Milan</h2>
-  <div class="vps-list">
-
-    <div class="vps-card">
-      <h3>Milan 4 GB</h3>
-      <p>2 Core | 4GB RAM | SSD</p>
-      <p><b>Rp 410.000</b></p>
-      <a class="order-btn" href="https://wa.me/62895327513269" target="_blank">Order WhatsApp</a>
-    </div>
-
-    <div class="vps-card">
-      <h3>Milan 8 GB</h3>
-      <p>4 Core | 8GB RAM | SSD</p>
-      <p><b>Rp 700.000</b></p>
-      <a class="order-btn" href="https://wa.me/62895327513269" target="_blank">Order WhatsApp</a>
-    </div>
-
-    <div class="vps-card">
-      <h3>Milan 16 GB</h3>
-      <p>4 Core | 16GB RAM | SSD</p>
-      <p><b>Rp 1.000.000</b></p>
-      <a class="order-btn" href="https://wa.me/62895327513269" target="_blank">Order WhatsApp</a>
-    </div>
-
+  <!-- Paket Standar -->
+  <div class="paket">
+    <span class="badge">⚡ Best Seller</span>
+    <h3>🛠️ Paket Standar</h3>
+    <p>RAM 7GB</p>
+    <p class="harga">5rb</p>
+    <a class="btn standar" href="#" onclick="order('Paket Standar | RAM 7GB')">Order</a>
   </div>
-
+  <!-- Paket TEBs -->
+  <div class="paket">
+    <h3>🔥 Paket TEBs</h3>
+    <p>RAM 9GB</p>
+    <p class="harga">7rb</p>
+    <a class="btn tebs" href="#" onclick="order('Paket TEBs | RAM 9GB')">Order</a>
+  </div>
+  <!-- Paket Jumbo -->
+  <div class="paket">
+    <h3>🌟 Paket Jumbo</h3>
+    <p>RAM Unlimited</p>
+    <p class="harga">9rb</p>
+    <a class="btn jumbo" href="#" onclick="order('Paket Jumbo | RAM Unlimited')">Order</a>
+  </div>
 </div>
 
+<div id="cookieNotice">
+  Kamu harus setujui cookies
+  <button class="cookie-btn setuju" onclick="accept()">Setuju</button>
+  <button class="cookie-btn tidak" onclick="decline()">Tidak</button>
+</div>
+
+<div id="notifikasi">Admin online, chat sekarang!</div>
+
+<script>
+function accept(){
+  document.getElementById('paketContainer').style.display='flex';
+  document.getElementById('infoBox').style.display='none';
+  document.getElementById('cookieNotice').style.display='none';
+  showPackages();
+  showNotification();
+}
+function decline(){
+  alert('Kamu harus setujui cookies untuk lanjut!');
+}
+function order(paket){
+  let msg = `HALLO KAK
+SAYA Mau order paket ${paket}
+
+Data
+Username:
+Password:
+
+Semoga admin langsung balas ya (＾ｖ＾)`;
+  let url = "https://wa.me/62895327513269?text=" + encodeURIComponent(msg);
+  window.open(url,"_blank");
+}
+function showPackages(){
+  const packages = document.querySelectorAll('.paket');
+  packages.forEach((paket,i)=>{
+    setTimeout(()=>{paket.classList.add('show')}, i*200);
+  });
+}
+function showNotification(){
+  const notif=document.getElementById('notifikasi');
+  notif.style.display='block';
+  setTimeout(()=>{notif.style.display='none'},10000);
+}
+</script>
+
 </body>
-  </html>
+      </html>
